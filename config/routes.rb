@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'person/index'
+  get 'person/show'
   root 'home#home_page'
+  resources  :person
   get "/home/home_page"
   # get "/home/:id", to: "home#show"
   # get "/home/new", to: "home#new"

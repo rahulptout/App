@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_061151) do
-  create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_08_03_085505) do
+  create_table "alogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", limit: 45
     t.string "status"
     t.date "release_date"
@@ -30,11 +30,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_061151) do
 
   create_table "people", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "email", limit: 30
     t.integer "mobile"
     t.date "date_of_birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "blood_group", limit: 5
   end
 
 end

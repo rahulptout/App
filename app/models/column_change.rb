@@ -1,0 +1,2 @@
+class ColumnChange < ApplicationRecord
+end
