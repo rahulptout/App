@@ -1,34 +1,39 @@
 class PersonController < ApplicationController
+
+  layout 'admin'
   def index
-    @people = Person.all
+    @person = Person.all
 
   end
 
   def show
-   @people = Person.find(params[:id])
-    
+    @person = Person.find(params[:id])
+
   end
 
   def new
-    @people  = Person.new
+    @person= Person.new
   end
 
   def create
-    @people = Person.new(people_params)
+    @person = Person.new(people_params)
 
-    if @people.save
-      redirect_to @people
+    if @p.save
+      flash[:notice] = 'Subject Created Successfully....'
+      redirect_to (@person)
 
     else
       render :new
+
     end
   end
 
   private
+
   def people_params
-    params.require(:people).permit(:name, :email)
+    params.require(:person).permit(:name, :email, :mobile, :date_of_birth, :blood_group)
 
   end
 
-  
+
 end

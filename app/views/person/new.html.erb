@@ -1,21 +1,40 @@
 <h1>New User</h1>
 
-<%= form_with model: @Person do |form| %>
+<%= form_with model:@people do |form| %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-    <% @people.errors.full_messages_for(:name).each do |message| %>
+    <% @person.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
     <%= form.label :email %><br>
-    <%= form.text_area :email %>
-    <% @people.errors.full_messages_for(:email).each do |message| %>
+    <%= form.text_field :email %>
+    <% @person.errors.full_messages_for(:email).each do |message| %>
     <% end %>
   </div>
 
+  <div>
+    <%= form.label :mobile %><br>
+    <%= form.text_field :mobile %>
+    <% @person.errors.full_messages_for(:mobile).each do |message| %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth %><br>
+    <%= form.text_field :date_of_birth %>
+    <% @person.errors.full_messages_for(:date_of_birth).each do |message| %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :blood_group %><br>
+    <%= form.text_field :blood_group %>
+    <% @person.errors.full_messages_for(:blood_group).each do |message| %>
+    <% end %>
+  </div>
   <div>
     <%= form.submit %>
   </div>
